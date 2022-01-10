@@ -1,4 +1,4 @@
-FROM rocker/r-base:latest
+FROM rocker/rstudio:4.1.2
 
 # install R packages
 # Additional R packages
