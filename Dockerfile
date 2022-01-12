@@ -17,6 +17,9 @@ ENV PATH="/opt/htslib/bin:${PATH}"
 COPY plink_linux_x86_64_20210606 /opt/plink
 ENV PATH="/opt/plink:${PATH}"
 
+# install IBPcnv
+COPY IBPcnv /opt/IBPcnv
+
 
 # install PennCNV
 # sligltly modified from https://github.com/romanhaa/docker-containers/blob/master/PennCNV/1.0.5/Dockerfile

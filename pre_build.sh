@@ -14,3 +14,6 @@ rm v1.0.5.tar.gz
 wget https://s3.amazonaws.com/plink1-assets/plink_linux_x86_64_20210606.zip
 unzip plink_linux_x86_64_20210606.zip
 rm plink_linux_x86_64_20210606.zip
+
+# clone IBPcnv repo
+git clone https://github.com/SinomeM/IBPcnv.git
