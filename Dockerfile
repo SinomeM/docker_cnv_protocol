@@ -13,6 +13,10 @@ RUN cd /opt/htslib-1.14 && \
   make install
 ENV PATH="/opt/htslib/bin:${PATH}"
 
+# install PLINK
+COPY plink_linux_x86_64_20210606 /opt/plink
+ENV PATH="/opt/plink:${PATH}"
+
 
 # install PennCNV
 # sligltly modified from https://github.com/romanhaa/docker-containers/blob/master/PennCNV/1.0.5/Dockerfile
