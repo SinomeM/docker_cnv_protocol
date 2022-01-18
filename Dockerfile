@@ -1,18 +1,42 @@
-FROM rocker/r-base:4.1.2
+FROM ubuntu:latest
 
 # inspiration from https://github.com/romanhaa/docker-containers/blob/master/PennCNV/1.0.5/Dockerfile
 # and https://github.com/rocker-org/rocker/blob/master/r-base/4.1.2/Dockerfile
 
 # install dependencies
+ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update --yes && \
-  apt-get upgrade --yes && \
-  apt-get install --yes \
-    build-essential \
-    libperl-dev \
-    zlib1g-dev \
-    libbz2-dev \
-    liblzma-dev \
-    libssl-dev
+  apt-get upgrade --yes
+
+RUN apt-get install -y --no-install-recommends \
+  build-essential \
+  libperl-dev \
+  zlib1g-dev \
+  libbz2-dev \
+  liblzma-dev \
+  libcurl4-openssl-dev \
+  libssl-dev \
+  libxml2-dev \
+  ed \
+  less \
+  locales \
+  vim-tiny \
+  wget \
+  ca-certificates \
+  fonts-texgyre \
+  gfortran \
+  fort77 \
+  libreadline-dev \
+  xorg-dev \
+  liblzma-dev \
+  libblas-dev \
+  gcc-multilib \
+  libpcre2-dev \
+  libcurl4-openssl-dev
+
+# install R
+COPY R-4.1.2 /opt/R-4.1.2
+RUN cd /opt/R-4.1.2 && ./configure && make && make install
 
 # Additional R packages
 ADD install_pkgs.R /tmp/

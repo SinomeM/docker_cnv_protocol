@@ -15,3 +15,6 @@ wget https://s3.amazonaws.com/plink1-assets/plink_linux_x86_64_20210606.zip
 unzip plink_linux_x86_64_20210606.zip -d plink
 rm plink_linux_x86_64_20210606.zip
 
+wget https://cran.r-project.org/src/base/R-4/R-4.1.2.tar.gz
+tar xzf R-4.1.2.tar.gz
+rm R-4.1.2.tar.gz
