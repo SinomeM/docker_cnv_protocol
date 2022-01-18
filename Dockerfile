@@ -1,5 +1,8 @@
 FROM rocker/r-base:4.1.2
 
+# inspiration from https://github.com/romanhaa/docker-containers/blob/master/PennCNV/1.0.5/Dockerfile
+# and https://github.com/rocker-org/rocker/blob/master/r-base/4.1.2/Dockerfile
+
 # install dependencies
 RUN apt-get update --yes && \
   apt-get upgrade --yes && \
@@ -11,7 +14,6 @@ RUN apt-get update --yes && \
     liblzma-dev \
     libssl-dev
 
-# install R packages
 # Additional R packages
 ADD install_pkgs.R /tmp/
 RUN Rscript /tmp/install_pkgs.R
@@ -29,7 +31,6 @@ COPY plink /opt/plink
 ENV PATH="/opt/plink:${PATH}"
 
 # install PennCNV
-# sligltly modified from https://github.com/romanhaa/docker-containers/blob/master/PennCNV/1.0.5/Dockerfile
 COPY PennCNV-1.0.5 /opt/PennCNV-1.0.5
 ENV PATH="/opt/PennCNV-1.0.5:${PATH}"
 RUN cd /opt/PennCNV-1.0.5/kext && \
