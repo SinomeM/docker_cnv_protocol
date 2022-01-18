@@ -1,9 +1,20 @@
-FROM rocker/rstudio:4.1.2
+FROM rocker/r-base:4.1.2
+
+# install dependencies
+RUN apt-get update --yes && \
+  apt-get upgrade --yes && \
+  apt-get install --yes \
+    build-essential \
+    libperl-dev \
+    zlib1g-dev \
+    libbz2-dev \
+    liblzma-dev \
+    libssl-dev
 
 # install R packages
 # Additional R packages
 ADD install_pkgs.R /tmp/
-RUN R -f /tmp/install_pkgs.R
+RUN Rscript /tmp/install_pkgs.R
 
 # install htslib
 COPY htslib-1.14 /opt/htslib-1.14
@@ -14,21 +25,12 @@ RUN cd /opt/htslib-1.14 && \
 ENV PATH="/opt/htslib/bin:${PATH}"
 
 # install PLINK
-COPY plink_linux_x86_64_20210606 /opt/plink
+COPY plink /opt/plink
 ENV PATH="/opt/plink:${PATH}"
-
-# install IBPcnv
-COPY IBPcnv /opt/IBPcnv
-
 
 # install PennCNV
 # sligltly modified from https://github.com/romanhaa/docker-containers/blob/master/PennCNV/1.0.5/Dockerfile
-RUN apt-get update --yes && \
-  apt-get upgrade --yes && \
-  apt-get install --yes \
-    build-essential \
-    libperl-dev
-COPY v1.0.5 /opt/PennCNV-1.0.5
+COPY PennCNV-1.0.5 /opt/PennCNV-1.0.5
 ENV PATH="/opt/PennCNV-1.0.5:${PATH}"
 RUN cd /opt/PennCNV-1.0.5/kext && \
   make

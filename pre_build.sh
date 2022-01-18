@@ -2,7 +2,7 @@
 
 # download htslib for tabix
 wget https://github.com/samtools/htslib/releases/download/1.14/htslib-1.14.tar.bz2
-tar xzf htslib-1.14.tar.bz2
+tar xf htslib-1.14.tar.bz2
 rm htslib-1.14.tar.bz2
 
 # download PennCNV
@@ -12,8 +12,6 @@ rm v1.0.5.tar.gz
 
 # download PLINK
 wget https://s3.amazonaws.com/plink1-assets/plink_linux_x86_64_20210606.zip
-unzip plink_linux_x86_64_20210606.zip
+unzip plink_linux_x86_64_20210606.zip -d plink
 rm plink_linux_x86_64_20210606.zip
 
-# clone IBPcnv repo
-git clone https://github.com/SinomeM/IBPcnv.git
