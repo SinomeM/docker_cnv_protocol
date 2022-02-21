@@ -59,3 +59,11 @@ COPY PennCNV-1.0.5 /opt/PennCNV-1.0.5
 ENV PATH="/opt/PennCNV-1.0.5:${PATH}"
 RUN cd /opt/PennCNV-1.0.5/kext && \
   make
+
+# install bcftools
+COPY bcftools-1.14 /opt/bcftools-1.14
+RUN cd /opt/bcftools-1.14 && \
+  ./configure --prefix=/opt/bcftools && \
+  make && \
+  make install
+ENV PATH="/opt/bcftools/bin:${PATH}"
