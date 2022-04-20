@@ -1,6 +1,9 @@
 options(repos = list(CRAN="http://cran.rstudio.com/"))
 install.packages(c("data.table",
-                   "devtools"))
+                   "ggplot2",
+                   "cowplot",
+                   "devtools",
+                   "fpc"))
 
 devtools::install_github("sinomem/QCtreeCNV")
 
