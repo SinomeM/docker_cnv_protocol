@@ -15,10 +15,11 @@ Included software:
 - R 4.1.2
 - htslib 1.14
 - PennCNV 1.0.5
-- PLINK 1.9 beta 6.4
 
 R packages (among others):
 
-- data.table
-- QCtreeCNV
+- `data.table`
+- `QCtreeCNV`
+- `VariantAnnotation`
+- `fpc`
 

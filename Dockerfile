@@ -50,9 +50,9 @@ RUN cd /opt/htslib-1.14 && \
   make install
 ENV PATH="/opt/htslib/bin:${PATH}"
 
-# install PLINK
-COPY plink /opt/plink
-ENV PATH="/opt/plink:${PATH}"
+#   # install PLINK
+#   COPY plink /opt/plink
+#   ENV PATH="/opt/plink:${PATH}"
 
 # install PennCNV
 COPY PennCNV-1.0.5 /opt/PennCNV-1.0.5
