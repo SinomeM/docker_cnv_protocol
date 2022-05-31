@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-# inspiration from https://github.com/romanhaa/docker-containers/blob/master/PennCNV/1.0.5/Dockerfile
+# losely inspired from https://github.com/romanhaa/docker-containers/blob/master/PennCNV/1.0.5/Dockerfile
 # and https://github.com/rocker-org/rocker/blob/master/r-base/4.1.2/Dockerfile
 
 # install dependencies
@@ -67,3 +67,8 @@ RUN cd /opt/bcftools-1.14 && \
   make && \
   make install
 ENV PATH="/opt/bcftools/bin:${PATH}"
+
+# install DeepEYE
+
+COPY eyeCNV /opt/eyeCNV
+ENV PATH="/opt/eyeCNV:${PATH}"

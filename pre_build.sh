@@ -23,3 +23,6 @@ rm v1.0.5.tar.gz
 wget https://cran.r-project.org/src/base/R-4/R-4.1.2.tar.gz
 tar xzf R-4.1.2.tar.gz
 rm R-4.1.2.tar.gz
+
+# download DeepEYE
+git clone https://github.com/XabierCS/eyeCNV.git
