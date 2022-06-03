@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-# inspiration from https://github.com/romanhaa/docker-containers/blob/master/PennCNV/1.0.5/Dockerfile
+# losely inspired from https://github.com/romanhaa/docker-containers/blob/master/PennCNV/1.0.5/Dockerfile
 # and https://github.com/rocker-org/rocker/blob/master/r-base/4.1.2/Dockerfile
 
 # install dependencies
@@ -75,3 +75,5 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN pip3 install Pyqt==5.12.3 pyqtgraph==0.12.3 pandas==1.2.5 numpy==1.20.1 pytabix==0.1
 
 # install DeepEYE in /opt/
+COPY eyeCNV /opt/eyeCNV
+ENV PATH="/opt/eyeCNV:${PATH}"
