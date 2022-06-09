@@ -68,14 +68,13 @@ RUN cd /opt/bcftools-1.14 && \
   make install
 ENV PATH="/opt/bcftools/bin:${PATH}"
 
-# install pip and python packages
+# install pip and python packages, plus xauth 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     python3.6 \
     python3-pip
 RUN apt-get install -y xauth
 RUN pip3 install pandas numpy
 RUN pip3 install Pyqt5==5.12.3 pyqtgraph==0.12.3
-#RUN pip3 install pytabix==0.1
 
 # install DeepEYE in /opt/
 COPY eyeCNV /opt/eyeCNV
