@@ -73,6 +73,7 @@ ENV PATH="/opt/bcftools/bin:${PATH}"
 RUN apt-get install -y libxcb*
 RUN apt-get install -y libxkbcommon*
 RUN apt-get install -y xauth
+RUN apt-get install -y libdbus-1-3
 
 # install pip and python packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
