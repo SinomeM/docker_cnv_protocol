@@ -15,6 +15,7 @@ Included software:
 - R 4.1.2
 - htslib 1.14
 - PennCNV 1.0.5
+- deepEYE (https://github.com/XabierCS/eyeCNV)
 
 R packages (among others):
 
