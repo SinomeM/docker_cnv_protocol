@@ -81,4 +81,4 @@ COPY eyeCNV /opt/eyeCNV
 ENV PATH="/opt/eyeCNV:${PATH}"
 
 # some missing libs (?)
-RUN apt-get install -y libxcb-*
+RUN apt-get install -y libxcb*
