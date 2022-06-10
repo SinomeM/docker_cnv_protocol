@@ -79,3 +79,6 @@ RUN pip3 install Pyqt5==5.12.3 pyqtgraph==0.12.3
 # install DeepEYE in /opt/
 COPY eyeCNV /opt/eyeCNV
 ENV PATH="/opt/eyeCNV:${PATH}"
+
+# some missing libs (?)
+RUN apt-get install -y libxcb-*
