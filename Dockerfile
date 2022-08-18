@@ -32,7 +32,13 @@ RUN apt-get install -y --no-install-recommends \
   libblas-dev \
   gcc-multilib \
   libpcre2-dev \
-  libcurl4-openssl-dev
+  libcurl4-openssl-dev \
+  libharfbuzz-dev \
+  libfribidi-dev \
+  libfreetype6-dev \
+  libpng-dev \
+  libtiff5-dev \
+  libjpeg-dev
 
 # install R
 COPY R-4.1.2 /opt/R-4.1.2
