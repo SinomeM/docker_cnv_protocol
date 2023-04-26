@@ -2,7 +2,7 @@
 
 GitHub repository containing the necessary files to create the Docker
 container with all necessary software to run the CNV calling macro-pipeline published
-in Current Protocol **[insert link]**.
+in Current Protocol <https://doi.org/10.1002/cpz1.621>.
 
 The already built docker image is available on dockerhub,
 <https://hub.docker.com/r/sinomem/docker_cnv_protocol>.
